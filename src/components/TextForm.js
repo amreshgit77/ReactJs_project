@@ -34,7 +34,7 @@ export default function Text(props) {
       </div>
     </div>
     <div className="container my-1">
-    <h2>Paragraph Details</h2>
+    <h3>Paragraph Details</h3>
     <p > {text.split("").length} words and {text.length} charachters </p>
     <p> {0.008*text.split("").length} minutes to read </p>
     <h3 class="p-1 mb-1 bg-warning text-dark">Preview</h3>
