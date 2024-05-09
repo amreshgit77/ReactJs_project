@@ -26,6 +26,11 @@ export default function Text(props) {
   const countWords = (str) => {
     if (str.length !== 0) return str;
   };
+
+  const myFunction=()=> {
+    navigator.clipboard.writeText(text);   
+    props.showAlert(" Text is Copied", "success");
+  }
   const [text, setText] = useState("kuchh likh le mc");
 
   return (
@@ -66,6 +71,13 @@ export default function Text(props) {
             className="btn btn-primary mx-1 my-1 "
           >
             Clear
+          </button>
+          <button
+            onClick={myFunction}
+            type="button "
+            className="btn btn-primary mx-1 my-1 "
+          >
+           Copy
           </button>
         </div>
       </div>

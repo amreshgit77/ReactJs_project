@@ -88,7 +88,7 @@ export default function About(props) {
             This word counter software works in any web browsers such as Chrome,
             Firefox, Internet Explorer, Safari, Opera. It sults to count
             characters in facebook, blog, books, excel document, pdf
-            document, essays, etc.
+            document,essays,etc.
           </div>
         </div>
       </div>
