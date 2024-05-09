@@ -48,7 +48,7 @@ function App() {
 
             <Route path="/">
               <TextForm
-                heading="Write some text to convert"
+                heading="Convert text into UpperCase and LowerCase"
                 mode={mode}
                 showAlert={showAlert}
               />

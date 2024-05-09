@@ -9,7 +9,7 @@ export default function Text(props) {
   let changelower = () => {
     let newText = text.toLowerCase();
     setText(newText);
-    props.showAlert(" converted tp lowercase", "success");
+    props.showAlert("converted tp lowercase", "success");
   };
   let handleonchange = (event) => {
     setText(event.target.value);
@@ -27,11 +27,16 @@ export default function Text(props) {
     if (str.length !== 0) return str;
   };
 
-  const myFunction=()=> {
+  const handlecopy=()=> {
     navigator.clipboard.writeText(text);   
     props.showAlert(" Text is Copied", "success");
   }
-  const [text, setText] = useState("kuchh likh le mc");
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+    props.showAlert("Extra spaces removed!", "success");
+}
+  const [text, setText] = useState("");
 
   return (
     <>
@@ -53,12 +58,14 @@ export default function Text(props) {
               backgroundColor: props.mode === "dark" ? "#0a1e3c" : "white"
             }}
             rows="5"
+            placeholder="Chal! Chal! Likh Kuchh"
           ></textarea>{" "}
           
-          <button onClick={changeval} type="button" className="btn btn-primary mx-1 my-1">
+          <button disabled={text.length===0} onClick={changeval} type="button" className="btn btn-primary mx-1 my-1" >
             Convert to UpperCase
           </button>
           <button
+          disabled={text.length===0}
             onClick={changelower}
             type="button "
             className="btn btn-primary  mx-1 my-1"
@@ -66,18 +73,29 @@ export default function Text(props) {
             Convert to LowerCase
           </button>
           <button
+          disabled={text.length===0}
             onClick={changeclear}
             type="button "
             className="btn btn-primary mx-1 my-1 "
+           
           >
             Clear
           </button>
           <button
-            onClick={myFunction}
+          disabled={text.length===0}
+            onClick={handlecopy}
             type="button "
             className="btn btn-primary mx-1 my-1 "
           >
            Copy
+          </button>
+          <button
+          disabled={text.length===0}
+            onClick={handleExtraSpaces}
+            type="button "
+            className="btn btn-primary mx-1 my-1 "
+          >
+           remove Extra Space
           </button>
         </div>
       </div>
@@ -88,7 +106,7 @@ export default function Text(props) {
       >
         <h2>Paragraph Details</h2>
         <p>
-          {text.split(" ").filter(countWords).length} words and {text.length}{" "}
+          {text.split(/\s+/).filter(countWords).length} words and {text.length}{" "}
           characters
         </p>
         <p> {0.008 * text.split(" ").filter(countWords).length} minutes to read </p>
