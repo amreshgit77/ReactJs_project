@@ -23,9 +23,9 @@ export default function About(props) {
           aria-labelledby="headingOne"
           data-bs-parent="#accordionExample"
         >
-          <div className={`accordion-body text-${props.mode == "dark" ? "white": "black"}`}
+          <div className={`accordion-body text-${props.mode === "dark" ? "white": "black"}`}
           style={{
-              backgroundColor: props.mode === "dark" ? "#0a1e3c" : "white",
+              backgroundColor: props.mode ==="dark" ? "#0a1e3c" : "white",
             }} >
             Textutils gives you a way to analyze your text quickly and
             efficiently. Be it word count, character count or
@@ -51,7 +51,7 @@ export default function About(props) {
           aria-labelledby="headingTwo"
           data-bs-parent="#accordionExample"
         >
-          <div className={`accordion-body text-${props.mode == "dark" ? "white": "black"}`}
+          <div className={`accordion-body text-${props.mode === "dark" ? "white": "black"}`}
           style={{
             backgroundColor: props.mode === "dark" ? "#0a1e3c" : "white",
           }} >
@@ -81,7 +81,7 @@ export default function About(props) {
           aria-labelledby="headingThree"
           data-bs-parent="#accordionExample"
         >
-          <div className={`accordion-body text-${props.mode == "dark" ? "white": "black"}`}
+          <div className={`accordion-body text-${props.mode === "dark" ? "white": "black"}`}
           style={{
             backgroundColor: props.mode === "dark" ? "#0a1e3c" : "white",
           }} >
